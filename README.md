@@ -7,62 +7,52 @@
 
 ## FRONT END
 
-### Basic Projects
+### Responsive Web Design Certification
 
 * [Tribute Page](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Portfolio](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Personal Portfolio](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Survey Form](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Product Landing Page](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Technical Documentation Page](https://codepen.io/EvanPlayle/pen/KGXqYx)
 
-### Intermediate Projects
+### Javascript Algorithms And Data Structures Certification 
  
-* [Random Quote Machine](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Local Weather](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Wikipedia Viewer](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Twitch.tv API](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Palindrome Checker](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Roman Numeral Converter](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Caesars Cipher](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Telephone Number Validator](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Cash Register](https://codepen.io/EvanPlayle/pen/KGXqYx)
  
-### Advanced Projects
+### Front End Libraries Certification 
 
 * [Javascript Calculator](https://codepen.io/EvanPlayle/pen/KGXqYx)
 * [Pomodoro Clock](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Tic Tac Toe Game](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Simon Game](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Markdown Previewer](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Random Quote Machine](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Drum Machine](https://codepen.io/EvanPlayle/pen/KGXqYx)
 
-### Javascript algorithm
+### Data Visualization Certification 
 
-* [Basic](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Intermediate](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)
-
-## DATA VISUALIZATION
-
-### React Projects
-
-* [Markdown Previewer](https://codepen.io/EvanPlayle/pen/KGXqYx)  
-* [Camper Leaderboard](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Recipe Box](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Game of Life](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Roguelike Dungeon Game](https://codepen.io/EvanPlayle/pen/KGXqYx)
-
-### Data Projects
-
-* [Bar chart](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Bar Chart](https://codepen.io/EvanPlayle/pen/KGXqYx)
 * [Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx)
 * [Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [National Contiguity with Force Directed Graph](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Map Data Across the Globe](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Treemap Diagram](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)
 
-## BACK END
+### Apis And Microservices Certification
 
-### Api 
+* [Timestamp Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)  
+* [Request Header Parser Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [URL Shortener Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Exercise Tracker](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [File Metadata Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)
 
-* [Timestamp](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Request Header Parser](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [URL Shortener](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Image Search Abstraction Layer](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [File Metadata](https://codepen.io/EvanPlayle/pen/KGXqYx)
+### Information Security And Quality Assurance Certification 
 
-### Dynamic Web Applicaiion
+* [Metric-Imperial Converter](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Issue Tracker](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Personal Library](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Stock Price Checker](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* [Anonymous Message Board](https://codepen.io/EvanPlayle/pen/KGXqYx)
 
-* [Voting App](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Nightlife Coordination App](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Chart Stock Market](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Manage Book Trading Club](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Pinterest Clone](https://codepen.io/EvanPlayle/pen/KGXqYx)
+
