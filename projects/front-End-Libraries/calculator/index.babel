@@ -1,0 +1,173 @@
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      outputBox: 0,
+      firstNum: "",
+      firstDec: false,
+      math: "",
+      secNum: "",
+      secDec: false,
+    }
+    this.add = this.add.bind(this);
+    this.finalState = this.finalState.bind(this);
+    this.clearState = this.clearState.bind(this);
+  }
+  
+  add(e) {
+     const addedChar = e.target.value;
+     if (/[^0-9+/*-]$/.test(this.state.firstNum) && addedChar === '0' || /[^0-9+/*-]$/.test(this.state.secNum) && addedChar === '0') {
+        console.log('hello');
+        const test = parseFloat(this.state.outputBox).toFixed(1)
+         this.setState( state = {
+           outputBox: test,
+       })
+      }
+     else if(/[0-9]/.test(addedChar) && this.state.math === "") {
+       console.log('1');       
+       const curChars = this.state.firstNum;
+       const together = parseFloat((curChars + addedChar));
+       console.log(together);
+       this.setState( state = {
+           outputBox: together,
+           firstNum: together,
+       })
+     }
+     else if(/[.]/.test(addedChar) && !/[.]/.test(this.state.firstNum) && this.state.math === "") {
+       console.log('2');    
+       const curChars = this.state.firstNum;
+       const together = curChars + addedChar;
+       console.log(parseFloat(together).toFixed(1));
+          if (!this.state.firstDec) {
+            this.setState( state = {
+              firstDec: true,  
+            })
+           this.setState( state = {
+               outputBox: together + "0",
+               firstNum: together,
+           })
+          }
+     }   
+     else  if(/[.]/.test(addedChar) && !/[.]/.test(this.state.secNum) && this.state.secNum !== "") {
+       console.log('3');    
+       const curChars = this.state.secNum;
+       const together = curChars + addedChar;
+          if (!this.state.secDec) {
+            this.setState( state = {
+              secDec: true,  
+            })
+           this.setState( state = {
+               outputBox: together + "0",
+               secNum: together,
+           })
+          }
+           else {
+               this.setState( state = {
+               outputBox: curChars + "0",
+               secNum: curChars,
+           })
+         }
+     }      
+     else  if(/[0-9]/.test(addedChar)) {
+       console.log('4');    
+       const curChars = this.state.secNum;
+       const together = parseFloat((curChars + addedChar));
+       this.setState( state = {
+           outputBox: this.state.firstNum + this.state.math + together,
+           secNum: together,
+       })
+     }
+      else if (/[+-/*]/.test(addedChar) && addedChar !== '.' && this.state.secNum === "") {
+        console.log('5');    
+         const sign = addedChar;
+         this.setState( state = {
+           outputBox: this.state.firstNum + sign,
+           math: sign,
+       })
+      }
+      else if (/[+-/*]/.test(addedChar) && addedChar !== '.'){
+        console.log('6');    
+        this.finalState();
+        const sign = addedChar;
+        this.setState( state = {
+           math: sign,
+       })
+        }
+      else if (addedChar === '.' ){
+        console.log('7'); 
+        }
+      else {
+        console.log('8');
+        this.finalState();
+      }
+       console.log(this.state);
+  }
+  
+  finalState(e) {
+   var rtn = eval(this.state.firstNum + this.state.math + this.state.secNum)    
+       this.setState( state = {
+          outputBox: rtn,
+          firstNum: rtn,
+          firstDec: true,
+          math: "",
+          secNum: "",
+          secDec: false,
+       })
+  }
+  
+  clearState() {
+     this.setState( state = {
+      outputBox: 0,
+      firstNum: "",
+      firstDec: false,
+      math: "",
+      secNum: "",
+      secDec: false,
+     })
+  }
+  
+  
+  render() {
+    return(
+      <div id='calc'>
+        <h1 id="calcTitle">FxX-hello123</h1>
+        <h2 id="display">{this.state.outputBox}</h2> 
+        <div id="btnContainer">
+          <button id="clear" class="calcBtn" onClick={this.clearState} >A/C</button>
+
+          <button id="divide" class="calcBtn" onClick={this.add} value= "/" >/</button>
+          <button id="multiply" class="calcBtn" onClick={this.add}  value= "*" >*</button>
+
+          <button id="seven" class="calcBtn" onClick={this.add} value= "7" >7</button>
+          <button id="eight" class="calcBtn" onClick={this.add} value= "8" >8</button>
+          <button id="nine" class="calcBtn" onClick={this.add} value= "9" >9</button>
+          
+          <button id="subtract" class="calcBtn" onClick={this.add} value= "-" >-</button>
+          
+
+          <button id="four" class="calcBtn" onClick={this.add} value= "4" >4</button>          
+          <button id="five" class="calcBtn" onClick={this.add} value= "5" >5</button>
+          <button id="six" class="calcBtn" onClick={this.add} value= "6" >6</button> 
+          
+          <button id="add" class="calcBtn" onClick={this.add} value= "+" >+</button>
+
+
+
+          <button id="one" class="calcBtn" onClick={this.add} value= "1" >1</button>
+          <button id="two" class="calcBtn" onClick={this.add} value= "2" >2</button>
+          <button id="three" class="calcBtn" onClick={this.add} value= "3" >3</button> 
+          
+          <button id="equals" class="calcBtn" onClick={this.finalState}>=</button>
+          <button id="zero" class="calcBtn" onClick={this.add} value= "0" >0</button>
+          <button id="decimal" class="calcBtn" onClick={this.add} value= "." >.</button>
+     
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Calculator />,
+  document.getElementById('calculator-div') 
+);
