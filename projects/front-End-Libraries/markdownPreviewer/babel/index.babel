@@ -1,0 +1,91 @@
+const renderer = new marked.Renderer();
+
+marked.setOptions({
+  breaks: true,
+  renderer: renderer,
+  sanitize: true
+});
+
+
+class MarkdownEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = { value: `# H1 
+## H2 
+[the real kevin, A link](https://i.pinimg.com/originals/eb/52/04/eb520458224fa5bb49fad7d05c6a12a9.jpg) 
+Will the real Kevin **Please stand up!**
+
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+var chilli !== true
+\`\`\`
+
+> I am a god eh
+
+
+![the thing i do best](https://i.pinimg.com/originals/eb/52/04/eb520458224fa5bb49fad7d05c6a12a9.jpg)
+
+- the god of chilli
+- possibly commited fraud
+* other things
+* even more other things
+                  ` };
+  }
+
+ handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
+  getRawMarkup() {
+    //const md = new Remarkable();
+    return { __html: marked(this.state.value) };
+  }
+
+
+  render() {
+    return (
+      <div className="MarkdownEditor">
+        <h3 id="inputLabel">Input</h3>
+        <label id="editor-label" htmlFor="editor">
+          Enter some markdown
+        </label>
+        <textarea 
+          id="editor"
+          rows="15"
+          cols="100"
+          onChange={this.handleChange} 
+          defaultValue={this.state.value} 
+          />
+        <h3 id="outputLabel">Output</h3>
+        <div id="preview"
+          className="content"
+          dangerouslySetInnerHTML={this.getRawMarkup()}
+        />
+      </div>
+    );
+  }
+}
+
+const Footer = () => (
+   <footer>
+      <p>
+         <span> <i className="fab fa-react"></i> React,</span>
+      </p>
+      <p>Coded by Evan Playle</p>
+   </footer>
+)
+
+const App = () => (
+   <React.Fragment>
+      <header>
+         <h1>Markdown Previewer</h1>         
+      </header>
+      <MarkdownEditor />
+      <Footer />
+   </React.Fragment>
+)
+
+
+ReactDOM.render(<App />, document.getElementById('content'));
