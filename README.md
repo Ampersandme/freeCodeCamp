@@ -32,7 +32,7 @@
 
 * [Javascript Calculator](https://codepen.io/EvanPlayle/pen/KGXqYx) **to upload**
 * [Pomodoro Clock](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
-* [Markdown Previewer](https://codepen.io/EvanPlayle/pen/KGXqYx) **to upload**
+* [Markdown Previewer](https://codepen.io/EvanPlayle/pen/KGXqYx) **testing**
 * [Random Quote Machine](https://codepen.io/EvanPlayle/pen/KGXqYx) **to upload**
 * [Drum Machine](https://codepen.io/EvanPlayle/pen/KGXqYx) **to upload**
 
@@ -40,24 +40,24 @@
 
 * [Bar Chart](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
 * ~~[Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
-* [Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Treemap Diagram](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)
+* ~~[Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Treemap Diagram](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)~~
 
 ### Apis And Microservices Certification
 
-* [Timestamp Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
-* [Request Header Parser Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [URL Shortener Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Exercise Tracker](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [File Metadata Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* ~~[Timestamp Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
+* ~~[Request Header Parser Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[URL Shortener Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Exercise Tracker](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[File Metadata Microservice](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
 
 ### Information Security And Quality Assurance Certification 
 
-* [Metric-Imperial Converter](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Issue Tracker](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Personal Library](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Stock Price Checker](https://codepen.io/EvanPlayle/pen/KGXqYx)
-* [Anonymous Message Board](https://codepen.io/EvanPlayle/pen/KGXqYx)
+* ~~[Metric-Imperial Converter](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Issue Tracker](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Personal Library](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Stock Price Checker](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Anonymous Message Board](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
 
 
