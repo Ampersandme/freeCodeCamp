@@ -39,8 +39,8 @@
 
 ### Data Visualization Certification 
 
-* [Bar Chart](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
-* ~~[Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* [Bar Chart](https://codepen.io/EvanPlayle/pen/KGXqYx) **testing**
+* [Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
 * ~~[Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
 * ~~[Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
 * ~~[Treemap Diagram](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)~~
