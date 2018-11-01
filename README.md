@@ -1,6 +1,7 @@
 # CURRICULUM
 
 ##### All code in this repository is supplied as demonstrating the exercises and projects completed for freecodeCamp.
+##### Links provided are currently codepens.
 ##### Any critism or constructive advice is always appreciated.
 ##### The format for this repository was inspired by the format used by user/brusbilis and their completion of the freeCodeCamp cirriculm.
 
