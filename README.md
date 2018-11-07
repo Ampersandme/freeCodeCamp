@@ -1,9 +1,9 @@
 # CURRICULUM
 
-##### All code in this repository is supplied as demonstrating the exercises and projects completed for freecodeCamp.
-##### Links provided are currently codepens.
-##### Any critism or constructive advice is always appreciated.
-##### The format for this repository was inspired by the format used by user/brusbilis and their completion of the freeCodeCamp cirriculm.
+###### All code in this repository is supplied as demonstrating the exercises and projects completed for freecodeCamp.
+###### Links provided are currently codepens.
+###### Any critism or constructive advice is always appreciated.
+###### The format for this repository was inspired by the format used by user/brusbilis and their completion of the freeCodeCamp cirriculm.
 
 ## Key
 
@@ -40,8 +40,8 @@
 ### Data Visualization Certification 
 
 * [Bar Chart](https://codepen.io/EvanPlayle/pen/KGXqYx) **testing**
-* [Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx) **_In Progress_**
-* ~~[Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* [Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx) **testing**
+* ~~[Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~ **_In Progress_**
 * ~~[Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
 * ~~[Treemap Diagram](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)~~
 
