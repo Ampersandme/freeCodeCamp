@@ -6,6 +6,9 @@
   "repository": "https://github.com/Ampersandme/freeCodeCamp.git",
   "author": "<evanplayle>",
   "license": "MIT",
+  "scripts": {
+    "prettier": "prettier --write projects/**/**/*.js"
+  },
   "devDependencies": {
     "prettier": "^1.15.1"
   }
