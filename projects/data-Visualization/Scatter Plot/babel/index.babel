@@ -1,0 +1,191 @@
+// Url of JSON data 
+
+const url =
+  "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json";
+
+d3.json(url, function(error, data) {
+  if (error) return console.warn(error);
+
+  // Didn't need to make this, I guess.
+/*
+  const customParse = data.map(clock => {
+    var nClock = {};
+    var inter = clock.Time;
+    var min = inter.replace(/(\d\d):(\d\d)/, "$1");
+    var secs = inter.replace(/(\d\d):(\d\d)/, "$2");
+    nClock["Time"] = parseInt(secs) + 60 * parseInt(min);
+    return nClock;
+  });
+*/
+  // constants from the pages attributes
+
+  const pad = 35;
+  const w = document.getElementById("graph").offsetWidth;
+  const h = document.getElementById("graph").offsetHeight;
+
+  const svg = d3
+    .select("#graph")
+    .append("svg")
+    .attr("id", "svg")
+    .attr("width", w)
+    .attr("height", h);
+
+  // This is for setting the axis and dot parameters. Formats everything into Date objects to pass the tests
+
+  var parseDate = d3.timeParse("%Y");
+  var formatDate = d3.timeFormat("%Y");
+  var parseTime = d3.timeParse("%M:%S");
+  var formatTime = d3.timeFormat("%M:%S");
+
+  //making the scales. I have set the bounds to the data max and mins, with the chart covering the area of the graph, which is relative to the window size
+
+  var yscale = d3
+    .scaleTime()
+    .domain([
+      d3.min(data, d => parseTime(d.Time)) ,
+      d3.max(data, d => parseTime(d.Time)) 
+    ])
+    .range([pad, h - pad]);
+
+  var xscale = d3
+    .scaleTime()
+    .domain([
+      d3.min(data, d => parseDate(d.Year - 1)),
+      d3.max(data, d => parseDate(d.Year + 1))
+    ])
+    .range([pad, w - pad]);
+  
+  // Formating scale tick numbering and number of ticks
+
+  var x_axis = d3.axisBottom().scale(xscale)
+                 .tickFormat(d3.scaleTime().tickFormat(10, "%Y"));
+
+  var y_axis = d3.axisLeft().scale(yscale)
+                 .tickFormat(d3.scaleTime().tickFormat(10, "%M:%S"));
+
+  svg
+    .append("g")
+    .attr("transform", "translate(" + 0 + ", " + parseInt(h - pad) + ")")
+    .attr("id", "x-axis")
+    .call(x_axis)
+    .append("text")
+    .attr("class", "axis-label")
+    .attr("y", pad)
+    .attr("x", w / 2)
+    .attr("text-anchor", "end")
+    .attr("stroke", "black")
+    .text("Year");
+
+  svg
+    .append("g")
+    .attr("transform", "translate(" + pad + ", " + 0 + ")")
+    .attr("id", "y-axis")
+    .call(y_axis)
+    .append("text")
+    .attr("class", "axis-label")
+    .attr("y", pad/2)
+    .attr("x", pad)
+    .attr("text-anchor", "end")
+    .attr("stroke", "black")
+    .text("Minutes");
+
+  svg
+    .selectAll(".dot")
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("class", (d, i) => {
+        return (d["Doping"] !== "" ? "dot Doping" : "dot Not-Doping");
+    })
+    .on("mouseover", onMouseOver)
+    .on("mouseout", onMouseOut)
+    .attr("data-xvalue", (d, i) => parseDate(d.Year))
+    .attr("data-yvalue", (d, i) => parseTime(d.Time))
+    .attr("cx", (d, i) => xscale(parseDate(d.Year)))
+    .attr("cy", (d, i) => yscale(parseTime(d.Time)))
+    .attr("r", 5);
+  /*
+    .attr("transform", function (d, i) {
+    var inter = parseInt(data[i].Time);
+  return "translate(" + data[i].Year + ", " + inter + ")"
+  });
+  */
+  
+  let legendItems = [
+        { color: "yellow", text: "Doping" },
+        { color: "blue", text: "Not-Doping" }
+    ];
+  
+  let legend = svg.append("g")
+      .attr("id", "legend")
+      .attr("transform", "translate(" +  (w-120) + "," + 50 + ")")
+  
+  legend.append("rect")
+        .attr("width", 120)
+        .attr("height", "3em")
+        .attr("stroke", "white")
+        .attr("stroke-width", "1")
+        .attr("fill", "none");
+  
+      legend.selectAll("rect")
+        .exit()
+        .data(legendItems)
+        .enter()
+        .append("rect")
+        .attr("class", d => d.text)
+        .attr("x", "0.25em")
+        .attr("y", (d, i) => `${0.25 + i * 1.5}em`)
+        .attr("width", "1em")
+        .attr("height", "1em");
+
+    legend.selectAll("text")
+        .exit()
+        .data(legendItems)
+        .enter()
+        .append("text")
+        .attr("x", "1.5em")
+        .attr("y", (d, i) => `${1.1 + i * 1.5}em`)
+        .attr("font-size", "1em")
+        .text(d => d.text);
+  
+// Created tooltip div
+  
+  
+  var tooltip = d3.select("#graph").append("div")   
+    .attr("id", "tooltip")
+    .style("opacity", 0)
+
+  function onMouseOver(d, i) {
+    
+// Highlight dot on selection
+    
+    d3.select(this).attr("class", (d, i) => {
+       return (d["Doping"] !== "" ? "highlight dot" : "hightlight dot");
+   })
+    
+ // Create tooltip for dot selected   
+    
+    tooltip.transition()	
+           .duration(300)
+           .style("opacity",0.9)
+           .style("left", (d3.event.pageX) + "px")
+           .style("top", (d3.event.pageY) + "px");
+           tooltip.html((d) => data[i].Name + ": " + data[i].Nationality + "<br/>" + "Year: " + data[i].Year + ", Time: " + data[i].Time + (data[i].Doping ? "<br/><br/>" + data[i].Doping: ""))
+            .attr("data-year", (d) => parseDate(data[i].Year));
+  }
+  
+  function onMouseOut(d, i) {
+    
+// Removing Hightlight
+    
+    d3.select(this).attr("class", (d, i) => {
+        return (d["Doping"] !== "" ? "dot Doping" : "dot Not-Doping");
+    })
+    
+// Removing tooltip
+    
+    tooltip.transition()
+           .duration(400)
+           .style("opacity", 0);
+  }
+});
