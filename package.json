@@ -1,0 +1,12 @@
+{
+  "name": "freeCodeCamp",
+  "version": "1.0.0",
+  "description": "organising and tracking all the projects I have completed for freeCodeCamp",
+  "main": "index.js",
+  "repository": "https://github.com/Ampersandme/freeCodeCamp.git",
+  "author": "<evanplayle>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.15.1"
+  }
+}
