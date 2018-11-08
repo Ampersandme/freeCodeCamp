@@ -41,9 +41,9 @@
 
 * [Bar Chart](https://codepen.io/EvanPlayle/pen/KGXqYx) **testing**
 * [Scatterplot Graph](https://codepen.io/EvanPlayle/pen/KGXqYx) **testing**
-* ~~[Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~ **_In Progress_**
-* ~~[Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~
-* ~~[Treemap Diagram](hhttps://codepen.io/EvanPlayle/pen/KGXqYx)~~
+* ~~[Heat Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~ **testing**
+* ~~[Choropleth Map](https://codepen.io/EvanPlayle/pen/KGXqYx)~~ **_In Progress_**
+* ~~[Treemap Diagram](https://codepen.io/EvanPlayle/pen/KGXqYx)~~ 
 
 ### Apis And Microservices Certification
 
