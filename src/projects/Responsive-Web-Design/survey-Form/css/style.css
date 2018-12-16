@@ -1,0 +1,100 @@
+/*css by element */
+
+body {
+	padding: 0% 10% 0% 10%;
+}
+header {
+	background-color: #ff6666;
+	padding: 10px 30px;
+	text-align: center;
+}
+
+footer {
+	background-color: #ff6666;
+	padding: 10px 30px;
+}
+
+/*css by id */
+#form-cont {
+margin: 2% 0%;
+padding: 2% 2%;
+border-width: 4px;
+border-style: ridge;
+border-color: rgba(28,110,164,0.61);
+}
+#submit {
+	width: 200px;
+	height: 30px;
+	margin: auto;	
+}
+
+#title {
+	
+}
+
+#description {
+	padding: 1% 0%;	
+}
+
+#survey-form {
+	
+}
+
+#name {
+	
+}
+
+#email {
+	
+}
+
+#number {
+	
+}
+
+#name-label {
+	
+}
+
+#email-label {
+	
+}
+
+#number-label {
+	
+}
+
+#cities-cont {
+	
+}
+
+#cities-label {
+	
+}
+
+#dropdown-label {
+	
+}
+
+#dropdown {
+	display:block;
+
+}
+
+#feedback-box {
+	display: block;
+	text-align: center;
+	position: relative;
+	margin: 10px auto;
+	width: 50%;
+
+}
+
+/*css by class */
+
+.labels {
+	/*display: inline-block; */
+	width: 200px;
+	height: 30px;	
+}
+

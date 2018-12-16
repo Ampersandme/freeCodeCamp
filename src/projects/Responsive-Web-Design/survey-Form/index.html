@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>freeCodeCamp: Survey Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <head>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	<title>
+		Survey Form - freeCodeCamp
+	</title>
+</head>
+<div>
+	<header>
+		<h1 id="title">Survey Form: European Cities</h1>
+		<nav>
+		</nav>
+	</header>
+
+	<body>
+		<div>
+			<p id="description"> This is a required Description</p>
+			<div id="form-cont">
+				<form id="survey-form">
+					<label for="name" id="name-label" class="labels">Name</label>
+					<input type="text" id="name" placeholder="Enter your name here" required>
+					<br>
+					<label for="email" id="email-label" class="labels">Email</label>
+					<input type="email" id="email" placeholder="Enter your email here" required>
+					<br>
+					<label for="number" id="number-label" class="labels">Number</label>
+					<input type="number" id="number" placeholder="Enter your number here" min="0" max="2">
+					<br>
+					<div id="cities-cont">
+						<label for="cities" id="cities-label" class="labels">What European Cities have you been to?</label>
+						<label>Prague<input name="cities" type="radio" class="cities" value="cities"></label>
+						<label>Prague<input name="cities" type="radio" class="cities" value="cities"></label>
+					</div>
+					<br>
+					<label for="dropdown" id="dropdown-label" class="labels">Favorite European City You Haven't Been To?</label>
+						<select name="dropdown" id="dropdown">
+							<option name="lisbon">Lisbon</option>
+							<option name="madrid">Madrid</option>
+							<option name="budapest">Budapest</option>
+							<option name="everywhere">I have been everywhere|</option
+						</select>
+					<br>
+										<label for="cost" class="labels-check">Cost</label>
+										<input name="cost" type="checkbox" class="reason-checkbox" value="cost">
+										<label for="culture" class="labels-check">Culture</label>
+										<input name="culture" type="checkbox" class="reason-checkbox" value="culture">
+	
+								
+					<textarea id="feedback-box">What cities arent here that deserve to be?</textarea>
+					<input id="submit" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<p>Let me know what you think. Give me your honest praise...</p>
+	</footer>
+
+</div>
+  
+  
+
+</body>
+
+</html>
