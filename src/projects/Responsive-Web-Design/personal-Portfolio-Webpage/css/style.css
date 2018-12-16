@@ -1,0 +1,134 @@
+
+/* example stolen from w3schools.com as an example to later change. */
+
+#contentPlate {
+    color: white;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #contentPlate  {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #contentPlate  {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #contentPlate  {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #contentPlate  {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #contentPlate  {background: pink;}
+}
+
+#welcome-section {
+  postion: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 70px;
+  width: 100%;
+  height: 100vh;
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  background-color: #bbd8e8;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nav-link{
+    padding: 20px 40px;
+    text-decoration: none;
+}
+
+h1, h2, h3{
+  color: black;
+  text-align: center;
+}
+
+#projects{
+  top: 70px;
+  width: 100%;
+  background: #ffbfbf;
+}
+
+projects-div{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#social-media{
+  width: 100%;
+  height: 300px;
+  background: #ffdfbf;
+}
+
+#social-media-btns{
+  display: flex;
+  flex direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.project-pic{
+  width: 100%;
+  height: 180px;
+}
+
+.project{
+  border: 2px solid black;
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+  height: 220px;
+  width: 220px;
+  margin: 20px 70px;
+  background: white;
+}
+
+.project-title{
+  text-align: center;
+  color: black;
+  padding: 10px 0px;
+}
+
+#main-project-title{
+  text-align: center;
+}
+
+footer{
+  height: 100px;
+  background: #22313F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item{
+  line-height: 100px;
+  text-align: center;
+  border-radius: 100%;
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+  background: white;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+}
