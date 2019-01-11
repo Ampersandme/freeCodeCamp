@@ -1,0 +1,125 @@
+#clock-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5em;
+  background-color: #F0FFFF;
+  border-radius:35px;
+}
+
+#containerMain {
+  //display: flex;
+  height: 80vh;
+  width: 75%;
+  background-color: #8D7CA4;
+  border-radius:35px;
+  border: 3px solid #3C3546;
+}
+
+.clockTitles {
+    text-align: center; 
+}
+
+#gridBox {
+  display: grid;
+  //flex-wrap: wrap;
+  //justify-content: center;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
+  height: 10em;
+  padding: 1em;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+}
+
+
+#break-label {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+#session-label {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#timer-label {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 25px;
+  letter-spacing: 5px;
+  word-spacing: -1px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#time-left {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 25px;
+  letter-spacing: 5px;
+  word-spacing: -1px;
+  grid-column-start: 1;
+  grid-column-end: 3; 
+}
+
+
+
+#lowerGridBox {
+  display: grid;
+  height: 20em;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 2em;
+  grid-column-gap: 5em;
+  grid-row-gap: 2em;
+}
+
+footer {
+  text-align: center;
+}
+
+
+.clockBtns {
+color: rgb(0, 0, 0); font-size: 17px; line-height: 20px; padding: 17px; border-radius: 29px; font-family: "Lucida Console", Monaco, monospace; font-weight: 900;; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-color: #a4997c; box-shadow: rgba(0, 0, 0, 0.49) 0px 0px 51px 14px; border: 2px solid #3C3546; display: inline-block;}
+.clockBtns:hover {
+background: rgb(168,100,114); }
+.clockBtns:active {
+background: rgb(164,100,124); }
+
+@media only screen and (max-width: 1200px) {
+    #gridBox {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        height: 16em;
+        padding: 1em;
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0.25em;
+    }
+      #break-label {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 1;
+    }
+    #session-label {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 3;
+    }
+  .clockBtns {
+    font-size: 14px;
+    padding: 10px;
+    line-height: 17px;
+  }
+  #lowerGridBox {
+      height: 8em;
+      padding: 1em;
+      grid-column-gap: 5em;
+      grid-row-gap: 2em;
+  }
+}
+

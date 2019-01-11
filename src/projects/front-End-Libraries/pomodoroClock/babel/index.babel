@@ -1,0 +1,269 @@
+function minSecs(t) {
+  if (Math.floor(t / 60) < 10) {
+    var integerPart = "0" + Math.floor(t / 60);
+  } else {
+    var integerPart = Math.floor(t / 60);
+  }
+  if (t - integerPart * 60 < 10) {
+    var inter = "0" + String(t - integerPart * 60);
+  } else {
+    var inter = t - integerPart * 60;
+  }
+
+  return integerPart + ":" + inter;
+}
+
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      session: 1,
+      breakLength: 300,
+      sessionLength: 1500,
+      timeLeft: 1500,
+      timeParsed: "25:00",
+      running: "NO",
+      sessionOrBreak: "SESSION"
+    };
+    this.breakChange = this.breakChange.bind(this);
+    this.sessionChange = this.sessionChange.bind(this);
+    this.reset = this.reset.bind(this);
+    this.startStopfnc = this.startStopfnc.bind(this);
+    this.sessionCount = this.sessionCount.bind(this);
+    console.log(this.state);
+  }
+
+  breakChange(e) {
+    var changeBreak;
+    if (e.target.value === "Inc") {
+      changeBreak = this.state.breakLength + 60 > 3600 ? 3600 : this.state.breakLength + 60;
+    } else if (e.target.value === "Dec") {
+      changeBreak = this.state.breakLength - 60 < 60 ? 60 : this.state.breakLength - 60;
+    }
+    this.setState(
+      (state = {
+        breakLength: changeBreak,
+      })
+    ); 
+    console.log(this.state);
+  }
+  
+  sessionChange(e) {
+    var changeSession;
+    if (e.target.value === "Inc") {
+      changeSession = this.state.sessionLength + 60 > 3600 ? 3600 : this.state.sessionLength + 60;
+    } else if (e.target.value === "Dec") {
+      changeSession = this.state.sessionLength + 60 < 60 ? 60 : this.state.sessionLength - 60;
+    }
+     var totalTime = changeSession;
+     var parsedTimeShown = minSecs(changeSession);
+    this.setState(
+      (state = {
+        sessionLength: changeSession,
+        timeLeft: totalTime,
+        timeParsed: parsedTimeShown
+      })
+    );
+    console.log(this.state);
+  }
+
+  sessionCount() {
+    console.log(this.state);
+    if (this.state.timeLeft === 0) {
+      if (this.state.sessionOrBreak === "SESSION") {
+        var newTime = this.state.breakLength;
+        var tempTime = minSecs(newTime);
+        this.setState(
+          (state = {
+            timeLeft: newTime,
+            timeParsed: tempTime,
+            sessionOrBreak: "BREAK"
+          })
+        );
+        this.audioOnZero.play();
+      } else if (this.state.sessionOrBreak === "BREAK") {
+        var newTime = this.state.sessionLength;
+        var tempTime = minSecs(newTime);
+        var tempSession = this.state.session + 1;
+        this.setState(
+          (state = {
+            timeLeft: newTime,
+            timeParsed: tempTime,
+            sessionOrBreak: "SESSION",
+            session: tempSession
+          })
+        );
+       this.audioOnZero.play(); 
+      }
+      console.log("Session/Break change");
+    } else {
+      var newTime = this.state.timeLeft - 1;
+      var tempTime = minSecs(newTime);
+      this.setState(
+        (state = {
+          timeLeft: newTime,
+          timeParsed: tempTime
+        })
+      );
+    }
+  }
+
+  startStopfnc() {
+    if (this.realTime && this.state.running === "YES") {
+      this.realTime.stop();
+      this.setState(
+        (state = {
+          running: "NO"
+        })
+      );
+    } else if (this.state.timeParsed !== "00:00") {
+      this.setState(
+        (state = {
+          running: "YES"
+        })
+      );
+      this.realTime = moment
+        .duration(1000)
+        .timer({ loop: true }, this.sessionCount);
+    } else {
+      const totalTime = this.state.sessionLength;
+      this.setState(
+        (state = {
+          timeLeft: totalTime,
+          running: "YES"
+        })
+      );
+      this.realTime = moment
+        .duration(1000)
+        .timer({ loop: true }, this.sessionCount);
+    }
+  }
+
+  reset() {
+    this.setState(
+      (state = {
+        session: 1,
+        breakLength: 300,
+        sessionLength: 1500,
+        timeLeft: 1500,
+        timeParsed: "25:00",
+        running: "NO",
+        sessionOrBreak: "SESSION"
+      })
+    );
+    if (this.realTime) {
+      this.realTime.stop();
+    }
+    this.audioOnZero.pause();
+    this.audioOnZero.currentTime = 0;
+    console.log(this.state);
+  }
+
+  render() {
+    return (
+      <div id="containerMain">
+        <div id="gridBox">
+          <div id="break-label" class="clockTitles">
+            <h2>Break Length</h2>
+          </div>
+
+          <button
+            id="break-increment"
+            class="clockBtns"
+            onClick={this.breakChange}
+            value="Inc"
+          >
+            Break Increment
+          </button>
+          <h3 id="break-length" class="clockTitles">
+            {this.state.breakLength / 60}
+          </h3>
+          <button
+            id="break-decrement"
+            class="clockBtns"
+            onClick={this.breakChange}
+            value="Dec"
+          >
+            Break Decrement
+          </button>
+
+          <div id="session-label" class="clockTitles">
+            <h2>Session Length</h2>
+          </div>
+
+          <button
+            id="session-increment"
+            class="clockBtns"
+            onClick={this.sessionChange}
+            value="Inc"
+          >
+            Session Increment
+          </button>
+          <h3 id="session-length" class="clockTitles">
+            {this.state.sessionLength / 60}
+          </h3>
+          <button
+            id="session-decrement"
+            class="clockBtns"
+            onClick={this.sessionChange}
+            value="Dec"
+          >
+            Session Decrement
+          </button>
+        </div>
+
+        <div id="lowerGridBox">
+          <h2 id="timer-label" class="clockTitles">
+            {this.state.sessionOrBreak} {this.state.session}
+          </h2>
+          <p id="time-left" class="clockTitles">
+            {this.state.timeParsed}
+          </p>
+          <button id="start_stop" class="clockBtns" onClick={this.startStopfnc}>
+            start stop
+          </button>
+          <button id="reset" class="clockBtns" onClick={this.reset}>
+            Reset
+          </button>
+        </div>
+        <audio id="beep" preload="auto" src="https://static.sfdict.com/audio/lunawav/C07/C0704700.ogg" type="audio/ogg" ref={(audio) => { this.audioOnZero = audio; }} />
+      </div>
+    );
+  }
+}
+
+const Footer = () => (
+  <footer>
+    <p>
+      <span>
+        {" "}
+        <i className="fab fa-react" /> React,
+      </span>
+      <span> Momentjs</span>
+    </p>
+    <p>
+      Sounds under
+      <a href="https://creativecommons.org/licenses/by/3.0/us/" target="_blank">
+        {" "}
+        Attribution 3.0 Licence
+      </a>
+      <span> from </span>
+      <a href="https://www.soundbible.com" target="_blank">
+        soundbible.com
+      </a>
+    </p>
+    <p>Coded by Evan Playle</p>
+  </footer>
+);
+
+const App = () => (
+  <React.Fragment>
+    <header>
+      <h1>Pomodoro Clock</h1>
+    </header>
+    <Clock />
+    <Footer />
+  </React.Fragment>
+);
+
+ReactDOM.render(<App />, document.getElementById("clock-div"));
