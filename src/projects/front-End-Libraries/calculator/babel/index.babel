@@ -129,6 +129,7 @@ class Calculator extends React.Component {
   
   render() {
     return(
+      <div id='calcBox'>
       <div id='calc'>
         <h1 id="calcTitle">FxX-hello123</h1>
         <h2 id="display">{this.state.outputBox}</h2> 
@@ -163,11 +164,33 @@ class Calculator extends React.Component {
      
         </div>
       </div>
+     </div>
     );
   }
 }
 
+const Footer = () => (
+    <footer>
+      <p>
+      <span> <i className="fab fa-react"></i> React,</span>
+      </p>
+      <p>Coded by Evan Playle</p>
+   </footer> 
+)
+
+
+const App = () => (
+   <React.Fragment>
+      <header>
+         <h1>JavaScript Calculator</h1>         
+      </header>
+      <Calculator />
+      <Footer />
+   </React.Fragment>
+)
+
+
 ReactDOM.render(
-  <Calculator />,
+  <App />,
   document.getElementById('calculator-div') 
 );

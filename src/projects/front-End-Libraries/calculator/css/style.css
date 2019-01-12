@@ -1,21 +1,35 @@
 body {
   min-height: 98vh;
-  background-color: black;
+  background-color: white;
 }
 
 #calculator-div {
-  height: 98vh; 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#calcBox {
+  height: 70vh;
+  width: 40vw;
   border: 3px solid green;
+  border-radius:35px;
   display: flex;
   align-items: center;
+  width: 30em;
   justify-content: center;
   background-color: #62db59;
 }
 
 #calc {
-  width: 40%;
+  width: 90%;
   height: 30em;
   border: 5px solid green;
+  border-radius:35px;
   background-color: #e2ede1;
 }
 
@@ -54,4 +68,10 @@ body {
 
 .calcBtn {
   height: 100%;
+  border: 5px outset green;
+  border-radius:35px;
+}
+
+footer {
+  text-align: center; 
 }
