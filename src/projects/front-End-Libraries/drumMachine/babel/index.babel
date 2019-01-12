@@ -1,0 +1,96 @@
+class DrumApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      descriptiveText: "This is going to change into the output",
+    };
+  this.playAudio = this.playAudio.bind(this);
+  this.handleKeyBtn = this.handleKeyBtn.bind(this);
+  }
+  
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyBtn);
+  }
+  
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyBtn);
+  }
+  
+  playAudio(e) {
+    const findAudioBtn = e.target.querySelector('audio').id;
+    document.getElementById(findAudioBtn).play();
+    const findText =  e.target.value;
+    console.log(findText)
+    this.setState( state = {
+      descriptiveText: findText,
+    });
+  }
+  
+  handleKeyBtn(e) {
+    const findAudioClick = e.key.toUpperCase();
+    document.getElementById(findAudioClick).play()
+    this.setState( state = {
+      descriptiveText: findAudioClick,
+    });
+  }
+  
+  render() {
+    return(
+     
+      <div id="display">
+        <h1>Pick a greeting Mixer</h1>
+        <h2>{this.state.descriptiveText}</h2>
+        
+            <div id="buttonBox">
+              <button id="soundHello" value="Hello" class="drum-pad" onClick={this.playAudio}>Q
+                <audio id="Q" value="Hello" class="clip" src="https://static.sfdict.com/audio/lunawav/H01/H0178500.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundHowdy" value="Howdy"  class="drum-pad" onClick={this.playAudio}>W
+                <audio id="W" class="clip" src="https://static.sfdict.com/audio/lunawav/H04/H0411800.ogg" type="audio/ogg"></audio></button>
+              <button id="soundAcknowledgment" value="Acknowledgement" class="drum-pad" onClick={this.playAudio}>E
+                <audio id="E" class="clip" src="https://static.sfdict.com/audio/lunawav/A00/A0089600.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundSalutation" value="Salutation" class="drum-pad" onClick={this.playAudio}>A
+                <audio id="A" class="clip" src="https://static.sfdict.com/audio/lunawav/S00/S0053100.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundCompliments" value="Compliments" class="drum-pad" onClick={this.playAudio}>S
+                <audio id="S" class="clip" src="https://static.sfdict.com/audio/lunawav/C07/C0704700.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundHowDoYouDo" value="How Do You Do?" class="drum-pad" onClick={this.playAudio}>D
+                <audio id="D" class="clip" src="https://static.sfdict.com/audio/lunawav/H04/H0411600.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundAttention" value="Attention" class="drum-pad" onClick={this.playAudio}>Z
+                <audio id="Z" class="clip" src="https://static.sfdict.com/audio/lunawav/A07/A0793700.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundShalom" value="Shalom (Hebrew)" class="drum-pad" onClick={this.playAudio}>X
+                <audio id="X" class="clip" src="https://static.sfdict.com/audio/lunawav/S04/S0404800.ogg" type="audio/ogg" ></audio></button>
+              <button id="soundBonjour" value="Bonjour (French)" class="drum-pad" onClick={this.playAudio}>C
+                <audio id="C" class="clip" src="https://static.sfdict.com/audio/lunawav/B04/B0487800.ogg" type="audio/ogg" ></audio></button>
+                
+            </div>
+        </div>
+    );
+  }  
+}
+
+const Footer = () => (
+   <footer>
+      <p>
+         <span> <i className="fab fa-react"></i> React,</span>
+      </p>
+      <p>Coded by Evan Playle</p>
+   </footer>
+)
+
+
+const App = () => (
+   <React.Fragment>
+      <header>
+         <h1>Drum Machine</h1>         
+      </header>
+      <DrumApp />
+      <Footer />
+   </React.Fragment>
+
+)
+
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("drum-machine")
+);
+        
